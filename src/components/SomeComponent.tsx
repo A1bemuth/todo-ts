@@ -10,7 +10,8 @@ const SomeComponent = (props: Props) =>
     (
     <Card elevation={Elevation.TWO} className="card">
         <h5>Card heading</h5>
-        <Button icon="plus">Press</Button>
+            <input type="text" className="pt-input center-me" />
+            <Button icon="plus" className="pt-intent-success add-button"/>
     </Card>
     );
 

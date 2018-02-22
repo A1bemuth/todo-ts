@@ -3,3 +3,12 @@
     height: 400px;
     margin: 10px auto;
 }
+
+.new-item {
+    line-height: 100px;    
+}
+
+.add-button {
+    margin-left: 5px;
+    vertical-align: middle;
+}

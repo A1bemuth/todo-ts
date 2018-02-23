@@ -1,12 +1,17 @@
 import * as React from 'react';
 import './App.css';
-import SomeComponent from './components/SomeComponent';
+import { TodoList } from './components/TodoList';
 
 class App extends React.Component {
   render() {
+    let items = [
+      {checked: true, text: 'Some true text'},
+      {checked: false, text: 'Wazzup'}
+    ];
+
     return (
       <div className="App">
-        <SomeComponent />
+        <TodoList items={items}/>
       </div>
     );
   }

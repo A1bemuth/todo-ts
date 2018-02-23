@@ -1,0 +1,10 @@
+.item-card { 
+    /* height: 45px; */
+    text-align: left;
+    padding: 5px 5px;
+    margin: 5px 0px;
+}
+
+.item-checkbox {
+    margin-bottom: 0px;    
+}

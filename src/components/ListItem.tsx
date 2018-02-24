@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Checkbox } from '@blueprintjs/core';
+import { Card, Switch } from '@blueprintjs/core';
 import './styles/ListItem.css';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 export const ListItem: React.SFC<Partial<Props>> = (
     { text = '', checked = false }
 ) => (
-        <Card className="item-card">
-            <Checkbox label={text} defaultChecked={checked} className="item-checkbox"/>
+        <Card className="item-card" interactive={true}>
+            <Switch label={text} defaultChecked={checked} className="item-switch"/>
         </Card>
     );

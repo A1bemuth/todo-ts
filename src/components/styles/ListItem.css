@@ -1,10 +1,9 @@
 .item-card { 
-    /* height: 45px; */
     text-align: left;
-    padding: 5px 5px;
+    padding: 10px 10px;
     margin: 5px 0px;
 }
 
-.item-checkbox {
+.item-switch {
     margin-bottom: 0px;    
 }

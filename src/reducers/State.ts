@@ -5,7 +5,7 @@ export interface NewItemInput {
 export interface Item {
     id: number;
     text: string;
-    isChecked: boolean;
+    checked: boolean;
 }
 
 export interface State {
@@ -18,5 +18,8 @@ export const initialState = {
         text: ''
     },
     items: [
+        {id: 1, text: 'Todo #1', checked: false},
+        {id: 2, text: 'Todo #2', checked: true},
+        {id: 3, text: 'Todo #3', checked: false}
     ]
 };

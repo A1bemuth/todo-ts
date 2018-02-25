@@ -5,13 +5,18 @@ export interface Action<T> {
     payload: T;
 }
 
-export function actionType<TActionType extends ActionType, TPayload>() {
+export function actionType<TActionType extends ActionType, TPayload>(type: TActionType) {
     return class implements Action<TPayload> {
+        static readonly Type = type;
+        
         type: TActionType;
         payload: TPayload;
-        
+
         constructor(payload: TPayload) {
-            this.payload = payload;
+            return {
+                payload,
+                type
+            };
         }
     };
 }
@@ -20,7 +25,5 @@ export function actionFactory<
     TPayload,
     TAction extends Action<TPayload>
     >(c: new (p: TPayload) => TAction) {
-    return function (payload: TPayload) {
-        return new c(payload);
-    };
+    return (payload: TPayload) => new c(payload);
 }

@@ -4,6 +4,16 @@
     margin: 5px 0px;
 }
 
+.item-card-checked {
+    text-decoration: line-through;
+    text-decoration-color: #5c7080;
+    color: #5c7080;
+}
+
+.item-card-unchecked {
+    
+}
+
 .item-switch {
     margin-bottom: 0px;    
 }

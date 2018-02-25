@@ -12,11 +12,13 @@ function newItemInputReducer(state: NewItemInput, action: AppActions): NewItemIn
     switch (action.type) {
         case ActionType.NEW_ITEM_INPUT_UPDATED:
             return { text: action.payload.text };
+        case ActionType.NEW_ITEM:
+            return { text: '' };
         default:
             return Object.assign({}, state);
     }
 }
-
+    
 function itemsReducer(items: Array<Item>, action: AppActions): Array<Item> {
     let newItems = items.slice();
     switch (action.type) {
@@ -26,6 +28,10 @@ function itemsReducer(items: Array<Item>, action: AppActions): Array<Item> {
             return newItems;
         case ActionType.ITEM_DELETED:
             return newItems.filter(i => i.id !== action.payload.id);
+        case ActionType.NEW_ITEM:
+            const newId = Math.max(...newItems.map(i => i.id)) + 1;
+            newItems.push({ id: newId, text: action.payload.text, checked: false });
+            return newItems;
         default:
             return newItems;
     }

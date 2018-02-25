@@ -19,7 +19,7 @@ export const NewItemInput: React.SFC<Partial<Props>> = (
                 type="text"
                 className="pt-input"
                 value={text}
-                onInput={() => onTextChanged && onTextChanged(text)}
+                onInput={(e) => onTextChanged && onTextChanged(e.currentTarget.value)}
             />
             <Button
                 icon="plus"
